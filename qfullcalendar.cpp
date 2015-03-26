@@ -32,7 +32,7 @@ QFullCalendar::Event QFullCalendarFileStorage::event(int id)
     return m_events[id];
 }
 
-QList<QFullCalendar::Event> QFullCalendarFileStorage::events(int start, int end)
+QList<QFullCalendar::Event> QFullCalendarFileStorage::events(uint start, uint end)
 {
     QList<QFullCalendar::Event> list;
     foreach (const QFullCalendar::Event &e, m_events)
@@ -71,7 +71,7 @@ public:
         return mappedEvents[id];
     }
 
-    virtual QList<QFullCalendar::Event> events(int start, int end)
+    virtual QList<QFullCalendar::Event> events(uint start, uint end)
     {
         QList<QFullCalendar::Event> list;
         foreach (const QFullCalendar::Event &e, mappedEvents)
@@ -151,7 +151,7 @@ public slots:
         return list;
     }
 
-    QVariantList events(int start, int end)
+    QVariantList events(uint start, uint end)
     {
         QVariantList list;
 

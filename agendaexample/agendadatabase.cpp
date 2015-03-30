@@ -26,7 +26,7 @@ QFullCalendar::Event AgendaDatabase::event(int id)
     return m_events[id];
 }
 
-QList<QFullCalendar::Event> AgendaDatabase::events(int start, int end)
+QList<QFullCalendar::Event> AgendaDatabase::events(uint start, uint end)
 {
     QList<QFullCalendar::Event> list;
     foreach (const QFullCalendar::Event &e, m_events)

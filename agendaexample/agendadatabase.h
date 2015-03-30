@@ -12,7 +12,7 @@ public:
     inline void setFileName(const QString &fileName) { m_fileName = fileName; }
 
     virtual QFullCalendar::Event event(int id);
-    virtual QList<QFullCalendar::Event> events(int start, int end);
+    virtual QList<QFullCalendar::Event> events(uint start, uint end);
     virtual void save(const QFullCalendar::Event &e);
 
 private:

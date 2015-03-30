@@ -12,11 +12,10 @@ class QFullCalendarWidget: public QWebView
 public:
     QFullCalendarWidget(QWidget *parent = 0);
 
-private slots:
-    void onDrop(const QFullCalendar::Event &e);
+    inline QFullCalendar *qFullCalendar() const { return m_qFullCalendar; }
 
 private:
-    QFullCalendar *qFullCalendar;
+    QFullCalendar *m_qFullCalendar;
 };
 
 #endif

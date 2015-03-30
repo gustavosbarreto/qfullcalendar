@@ -3,7 +3,7 @@
 
 #include "ui_mainwindow.h"
 
-class QFullCalendar;
+class QFullCalendarWidget;
 
 class MainWindow: public QMainWindow
 {
@@ -14,7 +14,7 @@ public:
 
 private:
     Ui::MainWindow ui;
-    QFullCalendar *m_fullCalendar;
+    QFullCalendarWidget *m_fullCalendar;
 };
 
 #endif

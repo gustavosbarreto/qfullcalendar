@@ -1,23 +1,17 @@
 #include "mainwindow.h"
 #include "agendadatabase.h"
-#include "qfullcalendar.h"
-
-#include <QWebView>
+#include "qfullcalendarwidget.h"
 
 MainWindow::MainWindow(): QMainWindow()
 {
     ui.setupUi(this);
 
-    QWebView *webView = new QWebView(this);
+    m_fullCalendar = new QFullCalendarWidget(this);
+    m_fullCalendar->qFullCalendar()->setEventFactory(new AgendaDatabase(this));
+    m_fullCalendar->qFullCalendar()->setDefaultView(QFullCalendar::AgendaWeekView);
 
-    centralWidget()->layout()->addWidget(webView);
+    centralWidget()->layout()->addWidget(m_fullCalendar);
 
-    m_fullCalendar = new QFullCalendar(webView);
-    m_fullCalendar->setEventFactory(new AgendaDatabase(this));
-    m_fullCalendar->setDefaultView(QFullCalendar::AgendaWeekView);
-
-    connect(m_fullCalendar, SIGNAL(eventClicked(const QFullCalendar::Event &)),
+    connect(m_fullCalendar->qFullCalendar(), SIGNAL(eventClicked(const QFullCalendar::Event &)),
             SLOT(showEventDialog(const QFullCalendar::Event &e)));
-
-    webView->load(QUrl("qrc:/qfullcalendar/index.html"));
 }

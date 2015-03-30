@@ -23,6 +23,12 @@ CONFIG += link_pkgconfig
 PKGCONFIG += qfullcalendar
 ```
 
+> ### You must have to initialize the QFullCalendar resources in your application's main function:
+
+```c++
+Q_INIT_RESOURCE(qfullcalendar);
+```
+
 ## Embedding into your project
 
 To embed the library into your project without installing into the system, add the following to your qmake project file:

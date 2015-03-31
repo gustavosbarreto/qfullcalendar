@@ -39,47 +39,65 @@ include(path/to/qfullcalendar.pri)
 
 # API
 
-## class QFullCalendar
+## ```class QFullCalendar```
 
 This is the main class.
 
-### *QFullCalendar::DefaultView* defaultView()
+```c++
+QFullCalendar::DefaultView defaultView()
+  ```
 
 Get the default view.
 
-### *void* setDefaultView(*QFullCalendar::DefaultView* view)
+```c++
+void setDefaultView(QFullCalendar::DefaultView view)
+```
 
 Set the default view.
 
-### *QFullCalendar::EventFactory* *eventFactory()
+```c++
+QFullCalendar::EventFactory *eventFactory()
+```
 
 Get the current event factory.
 
-### *void* setEventFactory(*QFullCalendar::EventFactory* *factory)
+```c++
+void setEventFactory(QFullCalendar::EventFactory *factory)
+```
 
 Set the current event factory.
 
-### *void* undoDropEvent()
+```c++
+void undoDropEvent()
+```
 
 Undo the last drop event.
 
-### *void* undoResizeEvent()
+```c++
+void undoResizeEvent()
+```
 
 Undo the last resize event.
 
-### *signal* eventClicked(*QFullCalendar::Event event*)
+```c++
+signal eventClicked(QFullCalendar::Event event)
+```
 
 This signal is emitted when an event is clicked.
 
-### *signal* eventDropped(*QFullCalendar::Event event*)
+```c++
+signal eventDropped(QFullCalendar::Event event)
+```
 
 This signal is emitted when dragging stops and the **event** has moved to a different day/time.
 
-### *signal* eventResized(*QFullCalendar::Event event*)
+```c++
+signal eventResized(QFullCalendar::Event event)
+```
 
 This signal is emitted when resizing stops and the **event** has changed in duration.
 
-## enum QFullCalendar::DefaultView
+## ```enum QFullCalendar::DefaultView```
 
 * MonthView
 * BasicWeekView
@@ -87,7 +105,7 @@ This signal is emitted when resizing stops and the **event** has changed in dura
 * AgendaWeekView
 * AgendaDayView
 
-## struct QFullCalendar::Event
+## ```struct QFullCalendar::Event```
 
 This struct represents an event.
 
@@ -99,18 +117,24 @@ This struct represents an event.
 | QString          | end    | End time of event    |
 | bool             | allDay | All day event        |
 
-## class QFullCalendar::EventFactory
+## ```class QFullCalendar::EventFactory```
 
 This is an abstract class that should be implemented to provide a factory of events to be used in the calendar. By default the QFullCalendar has in-memory event factory.
 
-### *QFullCalendar::Event* event(*int* id)
+```c++
+QFullCalendar::Event event(int id)
+```
 
 Get an event.
 
-### *QList<QFullCalendar::Event>* events(*uint* start, *uint* end)
+```c++
+QList<QFullCalendar::Event> events(uint start, uint end)
+```
 
 Get the events between **start** and **end**.
 
-### *void save*(const *QFullCalendar::Event* &e)
+```c++
+void save(const QFullCalendar::Event &e)
+```
 
 Save an event.

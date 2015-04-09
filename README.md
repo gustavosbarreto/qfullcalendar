@@ -138,3 +138,7 @@ void save(const QFullCalendar::Event &e)
 ```
 
 Save an event.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/gustavosbarreto/qfullcalendar/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
